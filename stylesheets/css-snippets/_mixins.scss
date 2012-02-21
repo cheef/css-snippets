@@ -1,4 +1,4 @@
-@mixin justify-items-container() {
+@mixin justify-items-container {
   line-height: 0;
   font-size: 1px; // for Opera
 
@@ -6,7 +6,7 @@
 
   // IE6-7
   text-justify: newspaper;
-  zoom:1;
+  zoom: 1;
   text-align-last: justify;
 
   &:after {

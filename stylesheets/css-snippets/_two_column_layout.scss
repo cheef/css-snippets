@@ -1,0 +1,36 @@
+.l-right-column {
+  clear: both;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .l-left-column-wrap {
+    float: left;
+    margin-left: -$two-column-layout-right-column-width;
+    position: relative;
+    right: 100%;
+    width: 200%;
+    background: $two-column-layout-left-column-background;
+
+    .l-left-column {
+      float: left;
+      left: 50%;
+      position: relative;
+      width: 50%;
+
+      .b-left-column {
+        margin: 0 $two-column-layout-space-between-columns 0 $two-column-layout-right-column-width;
+        overflow: hidden;
+      }
+    }
+
+    .b-right-column {
+      float: right;
+      left: $two-column-layout-right-column-width + $two-column-layout-space-between-columns;
+      position: relative;
+      width: $two-column-layout-right-column-width;
+      background: $two-column-layout-right-column-background;
+    }
+  }
+}

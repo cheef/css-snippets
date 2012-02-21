@@ -11,13 +11,12 @@ Gem::Specification.new do |s|
   s.summary     = %q{Provides a useful css snippets}
   s.description = %q{Provides a useful css snippets}
 
-  s.add_runtime_dependency "compass"
-
+  s.require_paths = %w(lib)
   s.files = []
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
 
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = %w(lib)
+
+  s.add_runtime_dependency "compass"
+  s.add_runtime_dependency "activesupport", '~> 3.1'
 end

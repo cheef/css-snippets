@@ -1,6 +1,1 @@
-require 'rails'
-
-module CssSnippets
-  class Engine < ::Rails::Engine
-  end
-end
+class CssSnippets::Engine < ::Rails::Engine; end
