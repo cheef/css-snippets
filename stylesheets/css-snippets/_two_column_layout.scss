@@ -20,16 +20,16 @@
       width: 50%;
 
       .b-left-column {
-        margin: 0 $two-column-layout-space-between-columns 0 $two-column-layout-right-column-width;
+        margin: 0 0 0 $two-column-layout-right-column-width;
         overflow: hidden;
       }
     }
 
     .b-right-column {
       float: right;
-      left: $two-column-layout-right-column-width + $two-column-layout-space-between-columns;
+      left: $two-column-layout-right-column-width;
       position: relative;
-      width: $two-column-layout-right-column-width;
+      width: $two-column-layout-right-column-width - $two-column-layout-space-between-columns;
       background: $two-column-layout-right-column-background;
     }
   }
