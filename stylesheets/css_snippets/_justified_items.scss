@@ -1,0 +1,7 @@
+.b-justified-container {
+  @include justify-items-container;
+
+  .b-justified-item {
+    @include justify-container-item;
+  }
+}

@@ -11,14 +11,20 @@ Gem::Specification.new do |s|
   s.summary     = %q{Provides a useful css snippets}
   s.description = %q{Provides a useful css snippets}
 
-  s.rubyforge_project = "css-snippets"
+  s.add_runtime_dependency "compass"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files = %w(
+    css_snippets.gemspec
+    Rakefile
+    lib/css_snippets.rb
+    lib/css_snippets/engine.rb
+    lib/css_snippets/version.rb
+    stylesheets/_css_snippets.scss
+    stylesheets/css_snippets/_justified_items.scss
+    stylesheets/css_snippets/_mixins.scss
+  )
+
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = %w(lib)
-
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
 end
