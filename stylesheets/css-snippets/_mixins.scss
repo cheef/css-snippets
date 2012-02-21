@@ -4,7 +4,7 @@
 
   text-align: justify;
 
-  /* IE6-7 */
+  // IE6-7
   text-justify: newspaper;
   zoom:1;
   text-align-last: justify;
@@ -19,13 +19,13 @@
   }
 }
 
-@mixin justify-container-item($font-size: 12px) {
+@mixin justify-container-item($font-size: $justified-container-item-font-size) {
   text-align: left;
 
   line-height: normal;
   font-size: $font-size;
 
-  /* Opera */
+  // Opera
   vertical-align: top;
   @include inline-block;
 }
