@@ -7,15 +7,16 @@ Gem::Specification.new do |s|
   s.version     = CssSnippets::VERSION
   s.authors     = ["Ivan Garmatenko"]
   s.email       = %w(cheef.che@gmail.com)
-  s.homepage    = ""
-  s.summary     = %q{Provides a useful css snippets}
-  s.description = %q{Provides a useful css snippets}
+  s.homepage    = "http://css-snippets.heroku.com"
+  s.summary     = %q{Provides a useful css snippets and layouts}
+  s.description = %q{Gem contains stylesheets and rails helpers which provides simple way to add useful css snippets to your site}
+
+  s.rubyforge_project = 'css-snippets'
 
   s.require_paths = %w(lib)
   s.files = []
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
-
 
   s.add_runtime_dependency "compass"
   s.add_runtime_dependency "activesupport", '~> 3.1'
