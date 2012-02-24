@@ -1,7 +1,45 @@
-.b-justified-container {
-  @include justify-items-container;
+@mixin justify-items($font-size: $justified-container-item-font-size) {
+  .b-justified-container {
+    @include justify-items-container;
 
-  .b-justified-item {
-    @include justify-container-item;
+    .b-justified-item {
+      @include justify-container-item($font-size);
+    }
   }
+}
+
+@mixin justify-items-container {
+  line-height: 0;
+  font-size: 1px; // for Opera
+
+  text-align: justify;
+
+  // IE6-7
+   text-justify: newspaper;
+  zoom: 1;
+  text-align-last: justify;
+
+  &:after {
+    width: 100%;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    content: '';
+    @include inline-block;
+  }
+}
+
+@mixin justify-container-item($font-size: $justified-container-item-font-size) {
+  text-align: left;
+
+  line-height: normal;
+  font-size: $font-size;
+
+  // Opera
+   vertical-align: top;
+  @include inline-block;
+}
+
+.l-default-justified-items {
+  @include justify-items;
 }

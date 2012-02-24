@@ -1,0 +1,42 @@
+@mixin right-menu-liquid-layout {
+  .l-right-column {
+    clear: both;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .l-left-column-wrap {
+      float: left;
+      margin-left: -$right-menu-liquid-layout-right-column-width;
+      position: relative;
+      right: 100%;
+      width: 200%;
+      background: $right-menu-liquid-layout-left-column-background;
+
+      .l-left-column {
+        float: left;
+        left: 50%;
+        position: relative;
+        width: 50%;
+
+        .b-left-column {
+          margin: 0 0 0 $right-menu-liquid-layout-right-column-width;
+          overflow: hidden;
+        }
+      }
+
+      .b-right-column {
+        float: right;
+        left: $right-menu-liquid-layout-right-column-width;
+        position: relative;
+        width: $right-menu-liquid-layout-right-column-width - $right-menu-liquid-layout-space-between-columns;
+        background: $right-menu-liquid-layout-right-column-background;
+      }
+    }
+  }
+}
+
+.l-default-right-menu-liquid-layout {
+  @include right-menu-liquid-layout;
+}

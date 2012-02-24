@@ -3,7 +3,6 @@ require 'active_support/dependencies/autoload'
 module CssSnippets
 
   autoload :Renderer, 'css-snippets/renderer'
-  autoload :Snippets, 'css-snippets/snippets'
   autoload :Version,  'css-snippets/version'
 
   def self.register_framework!
