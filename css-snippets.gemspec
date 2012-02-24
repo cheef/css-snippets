@@ -15,8 +15,10 @@ Gem::Specification.new do |s|
 
   s.require_paths = %w(lib)
   s.files = []
-  s.files += Dir.glob("lib/**/*.*")
-  s.files += Dir.glob("stylesheets/**/*.*")
+
+  %w(lib app stylesheets).each do |folder|
+    s.files += Dir.glob("#{folder}/**/*.*")
+  end
 
   s.add_runtime_dependency "compass"
   s.add_runtime_dependency "activesupport", '~> 3.1'
