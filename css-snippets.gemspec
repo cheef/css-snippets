@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = CssSnippets::VERSION
   s.authors     = ["Ivan Garmatenko"]
   s.email       = %w(cheef.che@gmail.com)
-  s.homepage    = "http://css-snippets.heroku.com"
+  s.homepage    = "http://css-snippets.herokuapp.com"
   s.summary     = %q{Provides a useful css snippets and layouts}
   s.description = %q{Gem contains stylesheets and rails helpers which provides simple way to add useful css snippets to your site}
 

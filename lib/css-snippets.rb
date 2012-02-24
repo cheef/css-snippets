@@ -3,7 +3,7 @@ require 'active_support/dependencies/autoload'
 module CssSnippets
 
   autoload :Renderer, 'css-snippets/renderer'
-  autoload :Version,  'css-snippets/version'
+  autoload :VERSION,  'css-snippets/version'
 
   def self.register_framework!
     require 'compass'
