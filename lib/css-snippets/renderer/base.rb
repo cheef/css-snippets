@@ -3,13 +3,29 @@ class CssSnippets::Renderer::Base < Struct.new(:helper)
   attr_accessor :options
 
   def to_html options = {}, &block
+    self.options = options
     helper.capture { instance_exec(self, &block) }
-    render.html_safe
+    render
+  end
+
+  def self.template name = :main, &proc
+    @templates ||= {}
+    @templates[name] = proc
+  end
+
+  def self.templates
+    @templates
   end
 
   private
 
-    def render; end
+    def render
+      render_template :main
+    end
+
+    def render_template name, *args
+      instance_exec(*args, &self.class.templates[name])
+    end
 
     def method_missing method, *args, &block
       helper.send method, *args, &block

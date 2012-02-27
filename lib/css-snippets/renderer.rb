@@ -14,7 +14,7 @@ module CssSnippets::Renderer
   end
 
   def self.render_html helper, snippet_name, options, &block
-    snippet_instance(snippet_name, helper).to_html options, &block
+    snippet_instance(snippet_name, helper).to_html(options, &block)
   end
 
   private

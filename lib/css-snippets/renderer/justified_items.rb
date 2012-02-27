@@ -2,31 +2,45 @@ module CssSnippets::Renderer
 
   class JustifiedItems < Base
 
-    ITEM_DOM_CLASS      = 'b-justified-item'
-    CONTAINER_DOM_CLASS = 'b-justified-container'
-    WRAPPER_DOM_CLASS   = 'l-default-justified-items'
+    template :main do
+      <<-HTML
+        <div class="#{wrapper_dom_class}">
+          <ul class="b-justified-container">
+            #{items}
+          </ul>
+        </div>
+      HTML
+    end
+
+    template :item do |content|
+      <<-HTML
+        <li class="b-justified-item">#{content}</li>
+      HTML
+    end
 
     def item content_or_options = nil, options = {}, &block
-      @items ||= []
-      @items << render_item(*element(content_or_options, options, &block))
-      return_nothing
+      return_nothing do
+        @items ||= []
+        @items << element(content_or_options, options, &block)
+      end
     end
 
     private
 
-      def render_item content, dirty_options
-        helper.content_tag :li, content, dirty_options.merge(:class => ITEM_DOM_CLASS)
-      end
-
       def render
-        helper.content_tag :div, render_list, :class => WRAPPER_DOM_CLASS
+        render_template :main
       end
 
-      def render_list
-        helper.content_tag :ul, @items.join("\n").html_safe, :class => CONTAINER_DOM_CLASS
+      def items
+        @items.map{ |item| render_template(:item, item.first) }.join("\n")
+      end
+
+      def wrapper_dom_class
+        options[:class] || 'l-default-justified-items'
       end
 
       def return_nothing
+        yield if block_given?
         ''
       end
 

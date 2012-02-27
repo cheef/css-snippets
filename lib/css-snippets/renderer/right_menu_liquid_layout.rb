@@ -2,7 +2,20 @@ module CssSnippets::Renderer
 
   class RightMenuLiquidLayout < Base
 
-    WRAPPER_DOM_CLASS = 'l-default-right-menu-liquid-layout'
+    template do
+      <<-HTML
+        <div class="#{wrapper_dom_class}">
+          <div class="l-right-column">
+            <div class="l-left-column-wrap">
+              <div class="l-left-column">
+                <div class="b-left-column">#{@left_column_content}</div>
+              </div>
+              <div class="b-right-column">#{@right_column_content}</div>
+            </div>
+          </div>
+        </div>
+      HTML
+    end
 
     def left_column content_or_options = nil, options = {}, &block
       @left_column_content, _  = element(content_or_options, options, &block)
@@ -14,19 +27,8 @@ module CssSnippets::Renderer
 
     private
 
-      def render
-        <<-HTML
-          <div class="#{WRAPPER_DOM_CLASS}">
-            <div class="l-right-column">
-              <div class="l-left-column-wrap">
-                <div class="l-left-column">
-                  <div class="b-left-column">#{@left_column_content}</div>
-                </div>
-                <div class="b-right-column">#{@right_column_content}</div>
-              </div>
-            </div>
-          </div>
-        HTML
+      def wrapper_dom_class
+        options[:class] || 'l-default-right-menu-liquid-layout'
       end
   end
 
