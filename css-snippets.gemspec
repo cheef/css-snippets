@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
     s.files += Dir.glob("#{folder}/**/*.*")
   end
 
-  s.add_runtime_dependency "compass"
-  s.add_runtime_dependency "activesupport", '~> 3.1'
+  s.add_runtime_dependency 'compass'
+  s.add_runtime_dependency 'activesupport'
 end
